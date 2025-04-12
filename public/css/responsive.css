@@ -1,0 +1,321 @@
+@media screen and (max-width: 1746px) {
+    .hero_section, .contact_us_section {
+        padding: 100px 10%;
+    }
+
+    .about_section, .doctors_section {
+        padding: 0 10%;
+    }
+
+    .about_us_section, .contact_main, .transformation_section {
+        padding: 50px 10%;
+    }
+
+    .service_section {
+        padding: 50px 10%;
+    }
+
+    .main_nav {
+        padding: 19px 10%;
+    }
+}
+
+@media screen and (max-width: 1393px) {
+    .hero_section, .contact_us_section {
+        padding: 100px 5%;
+    }
+
+    .service_section, .transformation_section {
+        padding: 50px 5%;
+    }
+
+    .about_section, .doctors_section {
+        padding: 0 5%;
+    }
+
+    .about_us_section, .contact_main {
+        padding: 50px 5%;
+    }
+
+    .main_nav {
+        padding: 19px 5%;
+    }
+}
+@media screen and (max-width: 1188px) {
+    .service_card {
+        max-width: calc(50% - 30px);
+        margin:auto;
+    }
+}
+
+@media screen and (max-width: 674px) {
+    .service_card {
+        max-width: calc(100% - 30px);
+        margin:auto;
+    }
+}
+@media screen and (max-width: 1138px) {
+    .about_section {
+        flex-direction: column;
+        align-items: start;
+        padding: 100px 0; /* Fixed invalid 'auto' value */
+    }
+
+    .about_main_img_container {
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 16/9;
+    }
+
+    .service_card {
+        height: fit-content;
+    }
+
+    .about_section { 
+        padding:0 3%;
+    }
+    .contact_button_container  {
+        display:none;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .hero_section, .contact_us_section {
+        padding: 100px 3%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about_us_section, .service_section, .transformation_section {
+        padding: 50px 3%;
+    }
+
+    .about_section, .doctors_section {
+        padding: 0 3%;
+    }
+
+    .contact_main {
+        padding: 50px 3%;
+    }
+
+    .main_nav {
+        padding: 19px 3%;
+    }
+
+    .hero_text_container, .hero_main_img {
+        width: 100%;
+    }
+
+    .hero_left_section {
+        width: 100%;
+    }
+
+    .contact_header_main {
+        gap: 0px;
+    }
+
+    .service_container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .about_us_section {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .emergency_card {
+        flex-direction: column;
+    }
+
+    
+}
+
+@media screen and (max-width: 940px) {
+    .contact_header_main {
+        flex-wrap: wrap;
+    }
+
+    .contact_main {
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+    }
+
+    .contact_left_main {
+        flex-direction: row;
+        width: fit-content;
+    }
+
+    .contact_form_section {
+        align-items: start;
+        margin: 0;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 829px) {
+    .transform_wrapper {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .image-comparison {
+        width: auto;
+    }
+
+    .transformation_container_header {
+        flex-direction: column;
+    }
+
+    .more_services_button {
+        margin: 20px 0;
+    }
+}
+
+@media screen and (max-width: 678px) {
+    .contact_left_main {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .emergency_card {
+        flex-direction: row;
+    }
+
+    .contact_form_section {
+        margin: 0;
+    }
+    /* .nav__links_contact {
+        display: none;
+    }
+
+    .menu_logo {
+        display: flex;
+    } */
+}
+
+@media screen and (max-width: 562px) {
+    .form_row {
+        flex-direction: column;
+    }
+
+    .contact_form_section {
+        justify-content: flex-start;
+        padding: 50px 0;
+    }
+
+    .contact_form_container {
+        width: 100%;
+    }
+
+    .contact_main_header {
+        min-width: 300px;
+    }
+    .about_us_left {
+        width: 100%;
+    }
+
+
+    .service_main_header , .about_main_header , .hero_main_text , .transformation_main_header , .about_main_header_sec ,.doctors_main_header  , .contact_main_header{
+        font-size: 2.5rem;
+    }
+    .logo {
+        width: 140px;
+        position: relative;
+        top:10px;
+    }
+    .main_nav {
+        /* border: 1px s9olid red; */
+        padding:0 5%;
+    }
+}
+
+@media screen and (max-width: 961px) {
+    .contact_button_container {
+        display: none;
+    }
+
+    .about_us_img_row {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .hero_buttons {
+        flex-wrap: wrap;
+        
+    }
+    .button_book, .button_enquiries {
+        width: 100%;
+        justify-content: center;
+        gap:20px;
+
+    }
+
+    .rate_container {
+        flex-direction: column;
+        gap:20px;
+    }
+    .service_main_header {
+        max-width: 600px;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    .nav__links_contact {
+        display: none; /* Hide the menu by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #1f1e1e73;
+        padding: 20px;
+        color: #ffff;
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav__links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav__links li {
+        margin: 10px 0;
+    }
+
+    .menu_logo {
+        display: block;
+    }
+
+    .nav__links_contact.active {
+        display: flex; /* Show the menu when the active class is added */
+    }
+    .about_main_header , .service_main_header  , .transformation_main_header , .about_main_header_sec , .doctors_main_header , .contact_main_header{
+        font-size:1.8rem;
+    }
+    .hero_main_text {
+        font-size:1.9rem;
+    }
+}
+
+
+@media screen  and (max-width: 441px){
+    .about_us_img {
+        max-width: 100%;
+    }
+    .about_us_img_row {
+        flex-direction: column;
+    }
+    .about_us_img {
+        max-height: 340px;
+    }
+    .hero_main_text {
+        font-size:1.4rem;
+    }
+}
