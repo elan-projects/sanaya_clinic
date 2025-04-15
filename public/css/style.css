@@ -232,7 +232,7 @@ textarea {
     fill: var(--color-titan-white-200);
 }
 .button_enquiries {
-    border:2px solid var(--color-titan-white-500);
+    border:2px solid var(--color-titan-white-200);
 }
 .hero_left_section {
     width: 650px;
@@ -402,47 +402,7 @@ textarea {
     background-color: var(--color-titan-white-background);
     padding:50px 15%;
 } 
-.service_container {
-    display: flex;
-    flex-direction: row;
-    gap:30px;
-    flex-wrap: wrap;
-    margin:100px 0;
-    justify-content: center;
-}
-.service_img {
-    width: 100%;
-    height: 100%;
-    border-radius: 40px;
-    overflow: hidden;
-    max-height: 200px;
-}
-.service_img img{ 
-    width: 100%;
-    height: 100%;
-    transition: all 0.4s ease 0s;
-}
-.service_card {
-    min-width: 300px;
-    width: 420px;
-    max-width: calc(33.33% - 30px);
-    max-height: 490px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 40px;
-    padding:35px;
-    background-color: #ffff;
-    gap:23px;
-    cursor: pointer;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.229);
-    user-select: none;
-    justify-content: space-between;
-    transition: box-shadow 0.3s ease 0s , transform 0.3s ease 0s;
-}
-.service_card:hover {
-    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.229);
-    transform: translateY(6px);
-}
+
 .service_card_header {
     display: flex;
     flex-direction: row;
@@ -451,21 +411,179 @@ textarea {
     padding:0 0 20px 0;
     /* justify-content: space-between; */
 }
-.service_card_header  {
+/* Dental Services Cards - Premium Design */
+.service_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.service_card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(224, 224, 224, 0.5);
+    position: relative;
+    z-index: 1;
+    justify-content: space-between;
+}
+
+.service_card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-titan-white-300), var(--color-titan-border));
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.service_card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15);
+    border-color: rgba(14, 165, 233, 0.3);
+}
+
+.service_card:hover::before {
+    opacity: 1;
+}
+
+/* Card Header */
+.service_card_header {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
     position: relative;
 }
-.service_card_header span {
-    font-size: 1.3rem;
-    font-weight: 600;
+
+.handle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.handle svg {
+    fill: var(--color-titan-white-300);
+}
+
+.service_logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--color-titan-white-400), rgba(11, 140, 112, 0.335));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+    flex-shrink: 0;
+}
+
+.service_card_header span {
+    font-weight: 600;
+    font-size: 18px;
+    color: #1e293b;
+    flex-grow: 1;
+}
+
 .service_card_header svg {
+    width: 24px;
+    height: 24px;
+    fill: #94a3b8;
+    transition: all 0.3s ease;
+}
+
+.service_card:hover .service_card_header svg {
+    fill: var(--color-titan-white-100);
+    transform: translateX(5px);
+}
+
+/* Card Content */
+.service_card p {
+    padding: 0 24px 24px;
+    margin: 0;
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* Card Image */
+.service_img {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.service_img::before {
+    content: '';
     position: absolute;
+    top: 0;
+    left: 0;
     right: 0;
-    fill: var(--color-titan-white-800);
-    transform: rotate(-40deg);
-    min-width: 35px;
-    height: 35px;
-    transition: all 0.3s ease 0s;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.1), transparent 60%);
+    z-index: 1;
+}
+
+.service_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.7s ease;
+}
+
+.service_card:hover .service_img img {
+    transform: scale(1.05);
+}
+
+/* Service-Specific Icons */
+.orthodontics .service_logo::before { content: "⎯"; font-weight: bold; font-size: 24px; } /* Braces */
+.oral-surgery .service_logo::before { content: "✜"; font-size: 22px; } /* Crossed surgical tools */
+.pediatric-dentistry .service_logo::before { content: "☻"; font-size: 22px; } /* Child face */
+.implants .service_logo::before { content: "⚬"; font-size: 24px; letter-spacing: -3px; } /* Implant dots */
+.prosthodontics .service_logo::before { content: "⌷"; font-size: 20px; } /* Crown symbol */
+.endodontics .service_logo::before { content: "⏣"; font-size: 20px; } /* Root symbol */
+.restorative .service_logo::before { content: "⏚"; font-size: 22px; } /* Filling symbol */
+.whitening .service_logo::before { content: "☼"; font-size: 22px; } /* Sun/whitening */
+.periodontics .service_logo::before { content: "⌓"; font-size: 22px; } /* Gum line */
+.oral-hygiene .service_logo::before { content: "⌇"; font-size: 22px; } /* Toothbrush bristles */
+
+.service_logo::before {
+    font-family: Arial, sans-serif;
+    line-height: 1;
+}
+
+/* RTL Support */
+[dir="rtl"] .service_card_header svg {
+    transform: rotate(180deg);
+    margin-left: 0;
+    margin-right: auto;
+}
+
+[dir="rtl"] .service_card:hover .service_card_header svg {
+    transform: rotate(180deg) translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service_container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
 }
 .service_header {
     letter-spacing: 2px;

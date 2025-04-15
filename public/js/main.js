@@ -156,30 +156,41 @@ const services = [
 
 function renderServices() {
     const container = document.querySelector(".service_container");
-    container.innerHTML = ""; // Clear existing content
+    container.innerHTML = "";
 
-    const selectedLanguage = sessionStorage.getItem("selectedLanguage") || "en"; // Default to English
+    const selectedLanguage = sessionStorage.getItem("selectedLanguage") || "en";
+
+    const iconClasses = {
+        "Orthodontics": "orthodontics",
+        "Oral and Maxillofacial Surgery": "oral-surgery",
+        "Pediatric and Special Needs Dentistry": "pediatric-dentistry",
+        "Dental Implants": "implants",
+        "Prosthodontics": "prosthodontics",
+        "Endodontics": "endodontics",
+        "Restorative Dentistry": "restorative",
+        "Teeth Whitening": "whitening",
+        "Periodontics": "periodontics",
+        "Oral Health and Hygiene": "oral-hygiene"
+    };
 
     services.forEach(service => {
         const card = document.createElement("div");
-        card.classList.add("service_card");
-
+        card.className = `service_card ${iconClasses[service.name_en].toLowerCase().replace(/\s+/g, '-')}`;
+        
         const serviceName = selectedLanguage === "ar" ? service.name_ar : service.name_en;
         const serviceDescription = selectedLanguage === "ar" ? service.description_ar : service.description_en;
 
         card.innerHTML = `
             <div class="service_card_header">
-                <div class="service_logo">
-                    <img src="" alt="">
-                </div>
+                <div class="service_logo"></div>
                 <span>${serviceName}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
-                    <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
             </div>
             <p>${serviceDescription}</p>
             <div class="service_img">
-                <img src=${service.image} alt="">
+                <img src="${service.image}" alt="${serviceName}" loading="lazy">
             </div>
         `;
 
@@ -187,8 +198,8 @@ function renderServices() {
     });
 }
 
-// Initial rendering
-renderServices();
+// Initialize
+document.addEventListener('DOMContentLoaded', renderServices);
 
 // Detect changes in sessionStorage for language change
 window.addEventListener("storage", (event) => {
